@@ -4,6 +4,7 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href= "//127.0.0.1:8000/static/css/bookmarklet.css?r=1234567890123456">
 </head>
 <body>
     <div id="header">
@@ -46,5 +47,15 @@
         {% block content %}
         {% endblock %}
     </div>
+
+    <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+      <script>
+        const csrftoken = Cookies.get('csrftoken');
+        document.addEventListener('DOMContentLoaded', (event) => {
+          // DOM loaded
+          {% block domready %}
+          {% endblock %}
+        })
+      </script>
 </body>
 </html>

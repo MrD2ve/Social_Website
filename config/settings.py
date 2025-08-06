@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e_lr5j&x^=^=rj)!ga)9n35&&rfzzuxqzfre3#!3a7xp-0m+91
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -169,3 +169,8 @@ SOCIAL_AUTH_TWITTER_SECRET = '***' # Twitter API Secret
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '***' # Google Client ID
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '***' # Google Client Secret
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
