@@ -6,6 +6,7 @@ body {
     font-family:helvetica, sans-serif;
 }
 
+
 p {
     line-height: 1.8;
 }
@@ -275,3 +276,4 @@ img.user-detail {
     font-style:italic;
     color:#ccc;
 }
+
